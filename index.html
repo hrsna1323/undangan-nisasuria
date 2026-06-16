@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Anisa & Suria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="locked-scroll">
+
+    <!-- Background Video for the whole page -->
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="https://inv.wekita.id/wp-content/uploads/2025/11/VINTAGE-06-BARU.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+
+    <!-- Cover Overlay -->
+    <div id="cover-page" class="cover-overlay">
+        <div class="cover-content" data-aos="zoom-in" data-aos-duration="1500">
+            <p class="subtitle">THE WEDDING OF</p>
+            <h1 class="title-names">Anisa & Suria</h1>
+            <div class="guest-info">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <h3 id="guest-name">Nama Tamu</h3>
+            </div>
+            <button id="btn-open" class="btn-primary">
+                <i class="fas fa-envelope-open-text"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Music Button -->
+    <button id="btn-music" class="floating-music hidden">
+        <i class="fas fa-compact-disc spin"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+                <p class="subtitle">WE ARE GETTING MARRIED</p>
+                <h1 class="title-names">Anisa & Suria</h1>
+                <p class="date">21 . 06 . 2026</p>
+                <a href="#quote" class="scroll-down">
+                    <i class="fas fa-chevron-down blink"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote" id="quote">
+            <div class="container" data-aos="fade-up">
+                <img src="https://inv.wekita.id/wp-content/uploads/2025/11/muslim-21-pos-flip-e1719212235813-1-1.png"
+                    alt="Bismillah" class="bismillah-img">
+                <p class="verse">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari
+                    jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu
+                    rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran
+                    Allah) bagi kaum yang berpikir."
+                </p>
+                <p class="surah"><b>(QS. Ar-Rum: 21)</b></p>
+            </div>
+        </section>
+
+        <!-- Intro Text -->
+        <section class="intro-text" id="intro">
+            <div class="container" data-aos="fade-up">
+                <p class="salam">Assalamu'alaikum wr.wb.</p>
+                <p class="intro-p">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat
+                    sekalian untuk menghadiri acara pernikahan kami:</p>
+            </div>
+        </section>
+
+        <!-- Couple Section -->
+        <section class="couple" id="couple">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Bride & Groom</h2>
+                <div class="couple-wrapper">
+                    <!-- Bride -->
+                    <div class="person" data-aos="fade-right">
+                        <h3 class="person-name">Lisa Nabila</h3>
+                        <p class="person-desc">Putri dari<br>Bapak Hermansyah & Ibu Qomariah</p>
+                        <a href="#" class="ig-link"><i class="fab fa-instagram"></i> @itsss_bila</a>
+                    </div>
+
+                    <h2 class="and" data-aos="zoom-in">&amp;</h2>
+
+                    <!-- Groom -->
+                    <div class="person" data-aos="fade-left">
+                        <h3 class="person-name">Suriadi</h3>
+                        <p class="person-desc">Putra dari<br>Bapak Dardiansyah & Ibu Yana</p>
+                        <a href="#" class="ig-link"><i class="fab fa-instagram"></i> @swaggyboy268</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="event" id="event">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Save The Date</h2>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-wrapper" data-aos="zoom-in">
+                    <div class="countdown-item"><span id="days">00</span>
+                        <p>Hari</p>
+                    </div>
+                    <div class="countdown-item"><span id="hours">00</span>
+                        <p>Jam</p>
+                    </div>
+                    <div class="countdown-item"><span id="minutes">00</span>
+                        <p>Menit</p>
+                    </div>
+                    <div class="countdown-item"><span id="seconds">00</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+
+                <div class="event-cards">
+                    <!-- Akad Nikah -->
+                    <div class="card" data-aos="fade-right">
+                        <i class="fas fa-ring card-icon"></i>
+                        <h3>Akad Nikah</h3>
+                        <div class="event-time">
+                            <p><strong>Senin, 8 Juni 2026</strong></p>
+                            <p>Jam 08.00 WITA - Selesai</p>
+                        </div>
+                        <div class="event-location">
+                            <p><strong>Lokasi</strong></p>
+                            <p>Desa Sungai Rukam, RT/RW. 001/000<br>Kecamatan Kusan Hulu</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/2ekEvuTogTM8CuSg7" target="_blank" class="btn-outline"><i
+                                class="fas fa-map-marker-alt"></i> Google Maps</a>
+                    </div>
+
+                    <!-- Resepsi -->
+                    <div class="card" data-aos="fade-left">
+                        <i class="fas fa-glass-cheers card-icon"></i>
+                        <h3>Resepsi</h3>
+                        <div class="event-time">
+                            <p><strong>Minggu, 21 Juni 2026</strong></p>
+                            <p>Jam 08.00 WITA - Selesai</p>
+                        </div>
+                        <div class="event-location">
+                            <p><strong>Lokasi</strong></p>
+                            <p>Desa Sungai Rukam, RT/RW. 001/000<br>Kecamatan Kusan Hulu</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/2ekEvuTogTM8CuSg7" target="_blank" class="btn-outline"><i
+                                class="fas fa-map-marker-alt"></i> Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Story -->
+        <section class="love-story" id="story">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Love Story</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-content">
+                            <h3>Awal Pertemuan</h3>
+                            <p>Tidak ada yang menyangka bahwa pertemuan itu akan membawa kami pada suatu ikatan suatu
+                                hari nanti, semua sudah tersusun rapih oleh sang maha kuasa kita tidak bisa memilih
+                                kepada siapa kita akan jatuh cinta.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-content">
+                            <h3>Lamaran</h3>
+                            <p>Katanya cinta dapat tumbuh dengan kebersamaan, seiring berjalannya waktu kami memutuskan
+                                untuk saling mengenalkan orang tua dan keluarga satu sama lain.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-content">
+                            <h3>Pernikahan</h3>
+                            <p>Kehendak-Nya menuntun kami pada sebuah pertemuan yang tak pernah disangka hingga akhirnya
+                                membawa kami pada sebuah ikatan suci.</p>
+                            <p>Bukan karena bertemu lalu berjodoh tapi karena berjodoh maka kami dipertemukan, kami
+                                memutuskan untuk mengikrarkan janji suci pernikahan kami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Gift -->
+        <section class="wedding-gift" id="gift">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Wedding Gift</h2>
+                <p class="gift-desc">Doa Restu Bapak/Ibu/Saudara/i sekalian merupakan karunia yang sangat berarti bagi
+                    kami. Dan jika memberi adalah ungkapan tanda kasih, Bapak/Ibu/Saudara/i dapat memberi kado secara
+                    <i>cashless</i>.
+                </p>
+
+                <div class="gift-cards">
+                    <div class="card gift-card" data-aos="fade-up">
+                        <i class="fas fa-university card-icon"></i>
+                        <h3>BCA</h3>
+                        <p>No. Rekening: <strong>1234567890</strong></p>
+                        <p>a.n Surya Pratama</p>
+                        <button class="btn-outline btn-copy" data-rek="1234567890"><i class="far fa-copy"></i> Salin No.
+                            Rekening</button>
+                    </div>
+                    <div class="card gift-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-wallet card-icon"></i>
+                        <h3>DANA</h3>
+                        <p>No. HP: <strong>081234567890</strong></p>
+                        <p>a.n Anisa Putri</p>
+                        <button class="btn-outline btn-copy" data-rek="081234567890"><i class="far fa-copy"></i> Salin
+                            No. DANA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP & Wishes -->
+        <section class="rsvp" id="rsvp">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">RSVP & Ucapan</h2>
+                <div class="form-wrapper">
+                    <form id="rsvp-form">
+                        <input type="text" id="name" placeholder="Nama Anda" required>
+                        <textarea id="message" rows="4" placeholder="Berikan ucapan & doa restu" required></textarea>
+                        <select id="attendance">
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                        <button type="submit" class="btn-primary">Kirim Ucapan</button>
+                    </form>
+                </div>
+                <div class="wishes-list" id="wishes-list">
+                    <!-- Wishes will be appended here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container" data-aos="fade-up">
+                <p class="closing-text">Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+                    Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami
+                    mengucapkan terima kasih.</p>
+                <h2 class="footer-names">Anisa & Suria</h2>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
