@@ -191,3 +191,21 @@ select option { background: #111; color: #fff; }
 /* Footer */
 .footer { background-color: #000; color: #fff; padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.2); }
 .closing-text { line-height: 1.8; margin-bottom: 30px; font-style: italic; }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .title-names, .footer-names { font-size: 3rem; }
+    .section-title { font-size: 2rem; }
+    .person-name { font-size: 2rem; }
+    .and { font-size: 3rem; margin: 10px 0; }
+    .cover-content { padding: 30px 15px; width: 95%; }
+    .countdown-item { width: 65px; padding: 10px 5px; }
+    .countdown-item span { font-size: 1.4rem; }
+    .card { padding: 30px 15px; }
+    section { padding: 50px 0; }
+    .timeline::after { left: 10px; }
+    .timeline-item { padding: 10px 15px 10px 30px; }
+    .timeline-item::after { left: 2px; width: 12px; height: 12px; top: 16px; border-width: 3px; }
+    .timeline-content { padding: 15px; }
+    .person { padding: 30px 20px; }
+}
