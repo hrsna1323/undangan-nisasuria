@@ -94,28 +94,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mock RSVP Submission
+    // RSVP & Wishes logic with Google Sheets
     const rsvpForm = document.getElementById('rsvp-form');
     const wishesList = document.getElementById('wishes-list');
+    const submitBtn = rsvpForm.querySelector('button[type="submit"]');
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbziMiqwoPIM_eXMRYdgTQpWYuqu-iACV1Sef-Z2nYOSUYRKRvGp5cUbOEvwcxN9JPfBYw/exec';
 
-    addWish('Rina & Keluarga', 'Hadir', 'Selamat menempuh hidup baru Anisa & Surya! Semoga samawa.');
+    function loadWishes() {
+        wishesList.innerHTML = '<p style="color:#fff; text-align:center;">Memuat ucapan...</p>';
+        fetch(SCRIPT_URL)
+            .then(res => res.json())
+            .then(data => {
+                wishesList.innerHTML = '';
+                if(data.length === 0) {
+                    wishesList.innerHTML = '<p style="color:#aaa; text-align:center;">Belum ada ucapan. Jadilah yang pertama!</p>';
+                } else {
+                    data.forEach(row => {
+                        if(row.Name && row.Message) {
+                            addWishToDOM(row.Name, row.Attendance, row.Message);
+                        }
+                    });
+                }
+            })
+            .catch(err => {
+                wishesList.innerHTML = '<p style="color:#ff6b6b; text-align:center;">Gagal memuat ucapan.</p>';
+            });
+    }
+
+    loadWishes();
 
     rsvpForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        submitBtn.innerText = 'Mengirim...';
+        submitBtn.disabled = true;
+
         const name = document.getElementById('name').value;
         const message = document.getElementById('message').value;
         const attendance = document.getElementById('attendance').value;
 
-        addWish(name, attendance, message);
-        rsvpForm.reset();
-        alert('Terima kasih! Ucapan Anda telah terkirim.');
+        const payload = {
+            name: name,
+            attendance: attendance,
+            message: message
+        };
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            submitBtn.innerText = 'Kirim Ucapan';
+            submitBtn.disabled = false;
+            
+            if(data.result === 'success') {
+                addWishToDOM(name, attendance, message);
+                rsvpForm.reset();
+                alert('Terima kasih! Ucapan Anda telah berhasil dikirim.');
+            } else {
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            }
+        })
+        .catch(err => {
+            submitBtn.innerText = 'Kirim Ucapan';
+            submitBtn.disabled = false;
+            alert('Gagal mengirim. Pastikan koneksi internet lancar.');
+        });
     });
 
-    function addWish(name, attendance, message) {
+    function addWishToDOM(name, attendance, message) {
+        if(wishesList.querySelector('p')) {
+            const p = wishesList.querySelector('p');
+            if(p.innerText.includes('Belum ada ucapan')) p.remove();
+        }
+
+        const icon = attendance === 'Hadir' ? 'fa-check-circle' : 'fa-times-circle';
+        
         const wishHtml = `
             <div class="wish-item" data-aos="fade-up">
                 <p class="wish-name">${name}</p>
-                <p class="wish-attendance"><i class="fas fa-check-circle"></i> ${attendance}</p>
+                <p class="wish-attendance"><i class="fas ${icon}"></i> ${attendance}</p>
                 <p class="wish-text">"${message}"</p>
             </div>
         `;
