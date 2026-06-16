@@ -1,11 +1,11 @@
-/* Color Palette: Dark Green & Gold (Vintage Premium) */
+/* Color Palette: Warm Brown & Gold (Vintage-09 Premium) */
 :root {
-    --primary-color: #1a3c34;
-    --accent-color: #d4af37;
+    --primary-color: #3b2f2f; /* Deep warm brown */
+    --accent-color: #dcb36b; /* Soft vintage gold */
     --bg-color: transparent;
-    --text-main: #f8f5f0;
+    --text-main: #fcf8f2; /* Warm white */
     --text-light: #cccccc;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
     --font-script: 'Great Vibes', cursive;
 }
@@ -37,7 +37,7 @@ body.locked-scroll { overflow: hidden; }
 .bg-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(10, 5, 0, 0.65); /* Warmer dark overlay */
     z-index: -1;
 }
 
@@ -63,10 +63,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--accent-color); f
     font-size: 0.9rem;
     text-transform: uppercase;
     color: #fff;
+    font-family: var(--font-body);
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 2rem;
     color: var(--accent-color);
 }
@@ -84,14 +85,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--accent-color); f
 
 .cover-content {
     position: relative; z-index: 2; text-align: center; color: #fff;
-    background: rgba(26, 60, 52, 0.4);
+    background: rgba(59, 47, 47, 0.4);
     padding: 50px 30px; border-radius: 15px; border: 1px solid var(--accent-color);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px);
     width: 90%; max-width: 500px;
 }
 
 .guest-info { margin: 30px 0; }
-.guest-info h3 { color: #fff; margin-top: 5px; font-size: 1.5rem; }
+.guest-info h3 { color: #fff; margin-top: 5px; font-size: 1.8rem; font-family: var(--font-heading); }
 
 .btn-primary {
     background-color: var(--accent-color); color: var(--primary-color);
@@ -101,7 +102,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--accent-color); f
 }
 .btn-primary:hover {
     background-color: #fff; color: var(--primary-color);
-    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(220, 179, 107, 0.4);
 }
 
 .btn-outline {
@@ -124,27 +125,34 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--accent-color); f
 /* Hero Section */
 .hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 .hero-content { color: #fff; }
-.date { font-size: 1.2rem; letter-spacing: 5px; margin-top: 10px; }
+.date { font-size: 1.2rem; letter-spacing: 5px; margin-top: 10px; font-family: var(--font-body); }
 .scroll-down { display: block; margin-top: 50px; color: var(--accent-color); font-size: 2rem; }
 .blink { animation: blink 2s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; transform: translateY(0); } 50% { opacity: 0.5; transform: translateY(10px); } }
 
 /* Sections General */
-section { padding: 80px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
-.quote, .intro-text, .couple, .event, .love-story, .wedding-gift, .rsvp { background: transparent; }
+section { padding: 80px 0; border-bottom: 1px solid rgba(220, 179, 107, 0.2); }
 
 /* Quote & Intro */
-.bismillah-img { max-width: 200px; margin-bottom: 20px; filter: invert(1); }
-.verse, .intro-p { font-style: italic; line-height: 1.8; color: var(--text-main); margin-bottom: 15px; }
-.salam { font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-color); margin-bottom: 15px; font-style: italic; }
+.verse, .intro-p { font-style: italic; line-height: 1.8; color: var(--text-main); margin-bottom: 15px; font-family: var(--font-heading); font-size: 1.2rem; }
+.salam { font-family: var(--font-script); font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px; font-style: italic; }
 
 /* Couple */
 .couple-wrapper { display: flex; flex-direction: column; align-items: center; gap: 30px; }
-.person { text-align: center; background: rgba(0,0,0,0.4); padding: 40px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.3); width: 100%; max-width: 400px; }
+.person { text-align: center; background: rgba(0,0,0,0.4); padding: 40px; border-radius: 15px; border: 1px solid rgba(220, 179, 107, 0.3); width: 100%; max-width: 400px; backdrop-filter: blur(5px); }
+.person-img-wrapper { width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-color); box-shadow: 0 0 15px rgba(220, 179, 107, 0.3); }
+.person-img { width: 100%; height: 100%; object-fit: cover; }
 .person-name { font-size: 2.5rem; margin-bottom: 10px; font-family: var(--font-script); }
 .person-desc { color: var(--text-light); font-size: 1rem; margin-bottom: 15px; line-height: 1.5; }
-.ig-link { color: var(--accent-color); text-decoration: none; font-weight: 400; }
+.ig-link { color: var(--accent-color); text-decoration: none; font-weight: 400; font-family: var(--font-body); }
 .and { font-family: var(--font-script); font-size: 4rem; color: var(--accent-color); margin: 20px 0; }
+
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media(min-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+.gallery-item { width: 100%; border-radius: 10px; overflow: hidden; border: 2px solid rgba(220, 179, 107, 0.4); }
+.gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.3s; }
+.gallery-item:hover img { transform: scale(1.05); }
 
 /* Event & Countdown */
 .countdown-wrapper { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
@@ -156,7 +164,7 @@ section { padding: 80px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
 @media(min-width: 768px) { .event-cards { flex-direction: row; justify-content: center; align-items: stretch; } }
 .card { background: rgba(0,0,0,0.5); border: 1px solid var(--accent-color); padding: 40px 20px; border-radius: 15px; width: 100%; max-width: 500px; flex: 1; backdrop-filter: blur(5px); }
 .card-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 20px; }
-.card h3 { color: var(--accent-color); margin-bottom: 20px; font-size: 1.5rem; }
+.card h3 { color: var(--accent-color); margin-bottom: 20px; font-size: 1.8rem; }
 .event-time, .event-location { margin-bottom: 20px; line-height: 1.5; font-size: 0.95rem; }
 
 /* Love Story Timeline */
@@ -164,9 +172,9 @@ section { padding: 80px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
 .timeline::after { content: ''; position: absolute; width: 2px; background-color: var(--accent-color); top: 0; bottom: 0; left: 20px; margin-left: -1px; }
 .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 100%; }
 .timeline-item::after { content: ''; position: absolute; width: 16px; height: 16px; right: auto; left: 12px; background-color: var(--bg-color); border: 4px solid var(--accent-color); top: 15px; border-radius: 50%; z-index: 1; }
-.timeline-content { padding: 20px; background: rgba(0,0,0,0.6); border: 1px solid var(--accent-color); position: relative; border-radius: 10px; }
-.timeline-content h3 { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 10px; font-family: var(--font-heading); }
-.timeline-content p { font-size: 0.9rem; line-height: 1.6; color: var(--text-light); }
+.timeline-content { padding: 20px; background: rgba(0,0,0,0.6); border: 1px solid var(--accent-color); position: relative; border-radius: 10px; backdrop-filter: blur(5px); }
+.timeline-content h3 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 10px; font-family: var(--font-heading); }
+.timeline-content p { font-size: 0.95rem; line-height: 1.6; color: var(--text-light); }
 
 /* Wedding Gift */
 .gift-desc { margin-bottom: 30px; line-height: 1.6; }
@@ -175,7 +183,7 @@ section { padding: 80px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
 .gift-card { padding: 30px 20px; }
 
 /* RSVP */
-.form-wrapper { max-width: 600px; margin: 0 auto 40px; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); }
+.form-wrapper { max-width: 600px; margin: 0 auto 40px; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); backdrop-filter: blur(5px); }
 form { display: flex; flex-direction: column; gap: 15px; }
 input, textarea, select { width: 100%; padding: 12px 15px; border: 1px solid var(--accent-color); background: rgba(255,255,255,0.1); color: #fff; border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; }
 input::placeholder, textarea::placeholder { color: #aaa; }
@@ -185,17 +193,18 @@ select option { background: #111; color: #fff; }
 .wishes-list::-webkit-scrollbar { width: 6px; }
 .wishes-list::-webkit-scrollbar-thumb { background-color: var(--accent-color); border-radius: 10px; }
 .wish-item { background: rgba(0,0,0,0.6); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--accent-color); }
-.wish-name { font-weight: 600; color: var(--accent-color); margin-bottom: 5px; }
+.wish-name { font-weight: 600; color: var(--accent-color); margin-bottom: 5px; font-family: var(--font-heading); font-size: 1.2rem; }
 .wish-attendance { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; }
+.wish-text { line-height: 1.5; font-size: 0.95rem; }
 
 /* Footer */
-.footer { background-color: #000; color: #fff; padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+.footer { background-color: #000; color: #fff; padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(220, 179, 107, 0.2); }
 .closing-text { line-height: 1.8; margin-bottom: 30px; font-style: italic; }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .title-names, .footer-names { font-size: 3rem; }
-    .section-title { font-size: 2rem; }
+    .section-title { font-size: 2.2rem; }
     .person-name { font-size: 2rem; }
     .and { font-size: 3rem; margin: 10px 0; }
     .cover-content { padding: 30px 15px; width: 95%; }
